@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Groceries</title>
+  <title>Groceries To Go</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class='header-content'>
+		<div class='header-container'>
+			<%= render 'layouts/header' %>
+		</div>
+		<div class='navigation-content'>
+			<%= render 'layouts/navigation' %>
+		</div>
+	</div>
 
-<%= yield %>
+	<div id='main-content'>
+		<%= yield %>
+	</div>
 
+	<div class='footer-content'>
+		<%= render 'layouts/footer' %>
+		</div>
 </body>
 </html>

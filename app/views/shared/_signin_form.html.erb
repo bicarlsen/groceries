@@ -1,0 +1,11 @@
+<%= form_tag signin_path do |f| %>
+	<%= render 'shared/flash' %>
+
+	<%= label_tag :email %>
+	<%= text_field_tag :email %>
+
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+
+	<%= submit_tag 'Sign In' %>
+<% end %>

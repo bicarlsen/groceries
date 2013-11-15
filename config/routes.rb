@@ -1,5 +1,19 @@
 Groceries::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  #---- Resources ----
+	resources :users
+	resources :sessions, only:[:new, :create, :destroy]
+
+	#---- Custom Routes ----
+	root 'home_pages#home'
+
+	# Signing Up / In / Out
+	match '/signup', 				to: 'users#new',						via: 'get'
+	match '/signup',				to: 'users#create',					via: 'post'
+	match '/signin',				to: 'sessions#new',					via: 'get'
+	match '/signin',				to: 'sessions#create',			via: 'post'
+	match '/signout',				to: 'sessions#destroy',			via: 'delete'
+	
+	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

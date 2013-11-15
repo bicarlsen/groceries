@@ -1,0 +1,16 @@
+<nav class='site-navigation'>
+	<div class='navigation-links'>
+		<%= link_to 'Home', root_path, class: 'navigation-link' %>
+
+		<% if signed_in? %>
+			<section class='user-navigation'>
+				<%= link_to 'Sign Out', signout_path, method: :delete, 
+					class: 'navigation-link' %>
+			</section>
+		<% end %>	
+	</div>
+</nav>
+
+
+
+
